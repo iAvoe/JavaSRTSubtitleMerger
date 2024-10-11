@@ -78,7 +78,15 @@ We could fit you in, kid.
 ```
 <p align="center">Merged.srt</p>
 
-# Usage
+# Usage - Java Runtime Environemnt
+
+1. Install and test java installation
+  - `java -version`
+2. Move/copy and record path to `out/MergeSRTFiles.jar`, as well as the 2 SRT files to merge
+3. Specify merged file output path to file, build commandline with content from last step as follows:
+  - `java -jar MergeSRTFiles.jar firstSRT.srt secondSRT.srt mergedFile.srt`
+
+# Usage - Java Development Kit Environment
 
 This project has included `file1.srt` and `file2.srt` in the `./src/` path for demonstration purposes, you may first test this by only modifying the line for output. Here it is `D:\Desktop\merged.srt`:
 ```

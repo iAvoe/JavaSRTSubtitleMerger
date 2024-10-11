@@ -78,7 +78,15 @@ We could fit you in, kid.
 ```
 <p align="center">Merged.srt</p>
 
-# 用法
+# 用法 - Java 运行环境
+
+1. 安装并测试 Java 环境：
+  - `java -version`
+2. 移动/复制并记下 `out/MergeSRTFiles.jar` 的路径，以及两份字幕的路径到文件
+3. 指定导出的路径到文件名，与上步内容组合为命令行并运行：
+  - `java -jar MergeSRTFiles.jar firstSRT.srt secondSRT.srt mergedFile.srt`
+
+# 用法 - Java 开发环境
 
 本项目的 `./src/` 路径中包含了演示用的 `file1.srt` 和 `file2.srt`，你可以一开始仅改动输出文件路径以测试，此处为 `D:\Desktop\merged.srt`：
 ```

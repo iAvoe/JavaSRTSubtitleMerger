@@ -2,11 +2,16 @@ import java.io.*;
 import java.util.*;
 
 public class SimpleSRTMerger {
-
     public static void main(String[] args) throws IOException {
+
+        // 从命令行参数中获取文件路径
+        String firstSRTInput = args[0]; // 第一个字幕 First subtitle file
+        String secondSRTInput = args[1]; // 第二个字幕 Second subtitle file
+        String outputFilePath = args[2];  // 输出合并的SRT文件 Output merged SRT file path
+
         // 要合并的两个文件，如 List<String[]> subtitles1 = readSRTFile("X:\文件夹\字幕1.srt");
-        List<String[]> subtitles1 = readSRTFile("./src/file1.srt");
-        List<String[]> subtitles2 = readSRTFile("./src/file2.srt");
+        List<String[]> subtitles1 = readSRTFile(firstSRTInput);
+        List<String[]> subtitles2 = readSRTFile(secondSRTInput);
         for (String[] line : subtitles1) {
             System.out.println(Arrays.toString(line));
         }
@@ -17,7 +22,7 @@ public class SimpleSRTMerger {
         }
         List<String> mergedSubtitles = mergeSubtitles(subtitles1, subtitles2);
         // 将要导出的文件写在下方，如 writeMergedSRTFile("X:\文件夹\合并.srt", mergedSubtitles)
-        writeMergedSRTFile("D:/Desktop/merged.srt", mergedSubtitles);
+        writeMergedSRTFile(outputFilePath, mergedSubtitles);
     }
     /**
      * Read SRT file into ArrayList containing string Arrays, e.g.:
@@ -39,17 +44,16 @@ public class SimpleSRTMerger {
             while ((line = br.readLine()) != null) {
                 if (line.trim().isEmpty()) {
                     // Process the accumulated subtitle block
-                    if (subtitleBuilder.length() > 0) {
+                    if (!subtitleBuilder.isEmpty()) {
                         String[] subtitleBlock = subtitleBuilder.toString().trim().split("\n");
                         subtitles.add(subtitleBlock);
                         subtitleBuilder.setLength(0); // Clear the builder for the next subtitle
                     }
-                } else {
-                    subtitleBuilder.append(line).append("\n");
                 }
+                else { subtitleBuilder.append(line).append("\n"); }
             }
             // Process the last subtitle block if it exists
-            if (subtitleBuilder.length() > 0) {
+            if (!subtitleBuilder.isEmpty()) {
                 String[] subtitleBlock = subtitleBuilder.toString().trim().split("\n");
                 subtitles.add(subtitleBlock);
             }
