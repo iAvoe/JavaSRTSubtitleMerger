@@ -78,17 +78,17 @@ We could fit you in, kid.
 ```
 <p align="center">Merged.srt</p>
 
-# Usage - Java Runtime Environemnt
+# Usage - Java Runtime Environment
 
 1. Install and test java installation
   - `java -version`
 2. Download `out/MergeSRTFiles.jar` and record its path, as well as the 2 SRT files to merge
-3. Specify merged file output path to file, build commandline with content from last step as follows:
+3. Specify merged file output path to file, build command line with content from last step as follows:
   - `java -jar MergeSRTFiles.jar firstSRT.srt secondSRT.srt mergedFile.srt`
 
 # Usage - Java Development Kit Environment
 
-This project is devbeloped in [Liberica Standard JDK 21](https://bell-sw.com/pages/downloads/#jdk-21-lts), with [Portable Intellij community edition](https://github.com/portapps/intellij-idea-community-portable). You may replace the variable for both input to your 2 SRT subttile files, then replace output variable to desired path to file, and run it.
+This project is developed in [Liberica Standard JDK 21](https://bell-sw.com/pages/downloads/#jdk-21-lts), with [Portable Intellij community edition](https://github.com/portapps/intellij-idea-community-portable). You may replace the variable for both input to your 2 SRT subttile files, then replace output variable to desired path to file, and run it.
 
 You may run this project with javac, or other java environments that allows you to execute, and text editor to modify `main.java`. You may select `Trust this project` to be able to execute this porject normally.
 
