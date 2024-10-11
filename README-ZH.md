@@ -82,25 +82,14 @@ We could fit you in, kid.
 
 1. 安装并测试 Java 环境：
   - `java -version`
-2. 移动/复制并记下 `out/MergeSRTFiles.jar` 的路径，以及两份字幕的路径到文件
+2. 下载 `out/MergeSRTFiles.jar` 并记下其路径，以及两份字幕的路径到文件
 3. 指定导出的路径到文件名，与上步内容组合为命令行并运行：
   - `java -jar MergeSRTFiles.jar firstSRT.srt secondSRT.srt mergedFile.srt`
 
 # 用法 - Java 开发环境
 
-本项目的 `./src/` 路径中包含了演示用的 `file1.srt` 和 `file2.srt`，你可以一开始仅改动输出文件路径以测试，此处为 `D:\Desktop\merged.srt`：
-```
-writeMergedSRTFile("D:/Desktop/merged.srt", mergedSubtitles);
-```
+本项目使用了 [Liberica Standard JDK 21](https://bell-sw.com/pages/downloads/#jdk-21-lts) 环境，以及 [Portable Intellij community edition](https://github.com/portapps/intellij-idea-community-portable) 工具开发。你也可以选用 javac 等工具运行，文本编辑器修改本项目中的 `main.java`。
 
-测试完成后，将两个 SRT 字幕文件的路径改为你需要合并文件的路径：
-```
-List<String[]> subtitles1 = readSRTFile("./src/file1.srt");
-List<String[]> subtitles2 = readSRTFile("./src/file2.srt");
-```
+将最开始的两个输入文件变量改为需要合并字幕 1, 2 的路径，然后指定一个输入字幕文件的路径即可运行。你可能需要选择  `Trust this project / 信任此项目` 以正常运行。
 
-本项目使用了 [Liberica Standard JDK 21](https://bell-sw.com/pages/downloads/#jdk-21-lts) 环境，以及 [Portable Intellij community edition](https://github.com/portapps/intellij-idea-community-portable) 工具开发。
-
-你也可以选用 javac 等工具运行，文本编辑器修改本项目中的 `main.java`。
-
-你可能需要选择  `Trust this project / 信任此项目` 以便正常运行。
+本项目的 `./src/` 路径中包含了演示用的 `file1.srt` 和 `file2.srt`。

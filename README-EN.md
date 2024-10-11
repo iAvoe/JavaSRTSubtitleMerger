@@ -82,26 +82,14 @@ We could fit you in, kid.
 
 1. Install and test java installation
   - `java -version`
-2. Move/copy and record path to `out/MergeSRTFiles.jar`, as well as the 2 SRT files to merge
+2. Download `out/MergeSRTFiles.jar` and record its path, as well as the 2 SRT files to merge
 3. Specify merged file output path to file, build commandline with content from last step as follows:
   - `java -jar MergeSRTFiles.jar firstSRT.srt secondSRT.srt mergedFile.srt`
 
 # Usage - Java Development Kit Environment
 
-This project has included `file1.srt` and `file2.srt` in the `./src/` path for demonstration purposes, you may first test this by only modifying the line for output. Here it is `D:\Desktop\merged.srt`:
-```
-writeMergedSRTFile("D:/Desktop/merged.srt", mergedSubtitles);
-```
+This project is devbeloped in [Liberica Standard JDK 21](https://bell-sw.com/pages/downloads/#jdk-21-lts), with [Portable Intellij community edition](https://github.com/portapps/intellij-idea-community-portable). You may replace the variable for both input to your 2 SRT subttile files, then replace output variable to desired path to file, and run it.
 
-After testing, modify the 2 pathes to where your SRT subtitles are:
-```
-List<String[]> subtitles1 = readSRTFile("./src/file1.srt");
-List<String[]> subtitles2 = readSRTFile("./src/file2.srt");
-```
+You may run this project with javac, or other java environments that allows you to execute, and text editor to modify `main.java`. You may select `Trust this project` to be able to execute this porject normally.
 
-
-This project is devbeloped in [Liberica Standard JDK 21](https://bell-sw.com/pages/downloads/#jdk-21-lts), with [Portable Intellij community edition](https://github.com/portapps/intellij-idea-community-portable).
-
-You may run this project with javac, or other java environments that allows you to execute, and text editor to modify `main.java`.
-
-You may select `Trust this project` to be able to execute this porject normally.
+This project has included `file1.srt` and `file2.srt` in the `./src/` path for demonstration purposes.
